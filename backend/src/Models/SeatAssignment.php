@@ -79,7 +79,7 @@ class SeatAssignment extends BaseEntity
      */
     public function person(): BelongsTo
     {
-        return $this->belongsTo(\App\Plugins\Apps\MiniApps\People\Models\Person::class, 'person_id', 'record_id');
+        return $this->belongsTo(\NewSolari\People\Models\Person::class, 'person_id', 'record_id');
     }
 
     /**

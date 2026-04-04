@@ -86,7 +86,7 @@ class SeatPlan extends BaseEntity
      */
     public function floorPlanImage(): BelongsTo
     {
-        return $this->belongsTo(\App\Plugins\Apps\MiniApps\Files\Models\File::class, 'floor_plan_image_id', 'record_id');
+        return $this->belongsTo(\NewSolari\Files\Models\File::class, 'floor_plan_image_id', 'record_id');
     }
 
     /**

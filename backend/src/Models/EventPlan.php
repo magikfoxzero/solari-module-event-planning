@@ -7,7 +7,7 @@ use NewSolari\Core\Entity\Traits\HasUnifiedRelationships;
 use NewSolari\Core\Entity\Traits\Shareable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Plugins\Apps\MiniApps\Budgets\Models\Budget;
+use NewSolari\Budgets\Models\Budget;
 use NewSolari\Core\Identity\Models\IdentityUser;
 
 class EventPlan extends BaseEntity

@@ -3,7 +3,7 @@
 namespace NewSolari\EventPlanning\Models;
 
 use NewSolari\Core\Entity\BaseEntity;
-use App\Services\EntityTypeRegistry;
+use NewSolari\Core\Identity\Models\EntityTypeRegistry;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
