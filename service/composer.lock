@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbbb3b72fdd3c82caf9a93f3197b7d24",
+    "content-hash": "f676187144e6d54ce6b208e8269fbe34",
     "packages": [
         {
             "name": "brick/math",
@@ -2496,10 +2496,16 @@
         {
             "name": "newsolari/core",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magikfoxzero/solari-core.git",
+                "reference": "5e7e778cf266c7147a336d20b23c25896bf015b5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../../../webos/packages/core",
-                "reference": "d04d89a928d87acbaf5c493ecad89bfac5b9593a"
+                "type": "zip",
+                "url": "https://api.github.com/repos/magikfoxzero/solari-core/zipball/5e7e778cf266c7147a336d20b23c25896bf015b5",
+                "reference": "5e7e778cf266c7147a336d20b23c25896bf015b5",
+                "shasum": ""
             },
             "require": {
                 "ezyang/htmlpurifier": "^4.19",
@@ -2508,6 +2514,7 @@
                 "php": "^8.2",
                 "web-auth/webauthn-lib": "^5.2"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2531,10 +2538,11 @@
                 "proprietary"
             ],
             "description": "SolariWebOS Core — auth, identity, permissions, module system, service bus",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/magikfoxzero/solari-core/tree/main",
+                "issues": "https://github.com/magikfoxzero/solari-core/issues"
+            },
+            "time": "2026-04-04T20:13:26+00:00"
         },
         {
             "name": "newsolari/event-planning",

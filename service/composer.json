@@ -17,11 +17,8 @@
             }
         },
         {
-            "type": "path",
-            "url": "../../../webos/packages/core",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-core.git"
         },
         {
             "type": "path",
