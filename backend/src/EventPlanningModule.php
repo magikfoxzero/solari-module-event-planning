@@ -6,7 +6,7 @@ use NewSolari\Core\Module\Contracts\ModuleInterface;
 
 class EventPlanningModule implements ModuleInterface
 {
-    public function getId(): string { return 'event-plans'; }
+    public function getId(): string { return 'event-planning'; }
     public function getName(): string { return 'Event Planning'; }
     public function getVersion(): string { return '1.0.0'; }
     public function getType(): string { return 'meta-app'; }
