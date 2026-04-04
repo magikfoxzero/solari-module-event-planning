@@ -21,39 +21,24 @@
             "url": "https://github.com/magikfoxzero/solari-core.git"
         },
         {
-            "type": "path",
-            "url": "../../budgets/backend",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-budgets.git"
         },
         {
-            "type": "path",
-            "url": "../../people/backend",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-people.git"
         },
         {
-            "type": "path",
-            "url": "../../files/backend",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-files.git"
         },
         {
-            "type": "path",
-            "url": "../../events/backend",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-events.git"
         },
         {
-            "type": "path",
-            "url": "../../ai-service/backend",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-ai-service.git"
         }
     ],
     "autoload": {
