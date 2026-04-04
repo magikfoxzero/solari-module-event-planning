@@ -9,6 +9,5 @@
 /storage/framework/views/
 /bootstrap/cache/packages.php
 /bootstrap/cache/services.php
-/composer.lock
 /storage/framework/testing/
 /storage/app/
