@@ -379,6 +379,58 @@ return new class extends Migration
             $table->index('archived_at', 'idx_seat_tables_archive_archived_at');
             $table->index('original_record_id', 'seat_tables_archive_original_record_id_index');
         });
+
+        if (!Schema::hasTable('recurring_event_patterns')) {
+            Schema::create('recurring_event_patterns', function (Blueprint $table) {
+                $table->string('record_id', 36)->primary();
+                $table->string('partition_id', 36);
+                $table->string('event_plan_id', 36);
+                $table->string('name');
+                $table->string('recurrence_type', 20);
+                $table->integer('interval_value')->default(1);
+                $table->json('days_of_week')->nullable();
+                $table->integer('day_of_month')->nullable();
+                $table->integer('week_of_month')->nullable();
+                $table->integer('month_of_year')->nullable();
+                $table->date('start_date');
+                $table->date('end_date')->nullable();
+                $table->integer('max_occurrences')->nullable();
+                $table->json('event_template');
+                $table->date('last_generated_date')->nullable();
+                $table->boolean('deleted')->default(false);
+                $table->timestamps();
+                $table->index('event_plan_id', 'recurring_event_patterns_event_plan_id_index');
+                $table->index('partition_id', 'recurring_event_patterns_partition_id_foreign');
+            });
+        }
+
+        if (!Schema::hasTable('recurring_event_patterns_archive')) {
+            Schema::create('recurring_event_patterns_archive', function (Blueprint $table) {
+                $table->bigIncrements('archive_id');
+                $table->string('original_record_id', 36);
+                $table->string('partition_id', 36);
+                $table->string('event_plan_id', 36);
+                $table->string('name');
+                $table->string('recurrence_type', 20);
+                $table->integer('interval_value')->default(1);
+                $table->json('days_of_week')->nullable();
+                $table->integer('day_of_month')->nullable();
+                $table->integer('week_of_month')->nullable();
+                $table->integer('month_of_year')->nullable();
+                $table->date('start_date');
+                $table->date('end_date')->nullable();
+                $table->integer('max_occurrences')->nullable();
+                $table->json('event_template');
+                $table->date('last_generated_date')->nullable();
+                $table->boolean('deleted')->default(false);
+                $table->timestamp('archived_at')->useCurrent();
+                $table->string('archived_by', 64)->default('system-archive-daemon');
+                $table->timestamps();
+                $table->index(['partition_id', 'original_record_id'], 'idx_recurring_event_patterns_archive_partition_record');
+                $table->index('archived_at', 'idx_recurring_event_patterns_archive_archived_at');
+                $table->index('original_record_id', 'recurring_event_patterns_archive_original_record_id_index');
+            });
+        }
     }
 
     /**
@@ -401,6 +453,8 @@ return new class extends Migration
         Schema::dropIfExists('event_plan_nodes');
         Schema::dropIfExists('event_plan_drawings');
         Schema::dropIfExists('event_plan_connections');
+        Schema::dropIfExists('recurring_event_patterns_archive');
+        Schema::dropIfExists('recurring_event_patterns');
         Schema::enableForeignKeyConstraints();
     }
 };
