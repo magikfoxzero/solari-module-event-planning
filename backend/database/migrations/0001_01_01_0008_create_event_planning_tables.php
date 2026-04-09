@@ -15,6 +15,8 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         if (!Schema::hasTable('event_plan_connections')) {
             Schema::create('event_plan_connections', function (Blueprint $table) {
                 $table->string('record_id', 36)->primary();
@@ -462,6 +464,7 @@ return new class extends Migration
     }
 
     /**
+        Schema::enableForeignKeyConstraints();
      * Reverse the migrations.
      */
     public function down(): void
