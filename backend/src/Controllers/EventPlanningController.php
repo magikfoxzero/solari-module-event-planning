@@ -4,7 +4,7 @@ namespace NewSolari\EventPlanning\Controllers;
 
 use NewSolari\Core\Http\BaseController;
 use NewSolari\Core\Http\Traits\RelationshipControllerTrait;
-use NewSolari\Core\Identity\Models\IdentityUser;
+use NewSolari\Identity\Models\IdentityUser;
 use NewSolari\EventPlanning\Models\EventPlan;
 use NewSolari\EventPlanning\Models\EventPlanNode;
 use NewSolari\EventPlanning\Models\EventPlanConnection;

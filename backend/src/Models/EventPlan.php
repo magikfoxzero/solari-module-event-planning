@@ -8,7 +8,7 @@ use NewSolari\Core\Entity\Traits\Shareable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use NewSolari\Budgets\Models\Budget;
-use NewSolari\Core\Identity\Models\IdentityUser;
+use NewSolari\Identity\Models\IdentityUser;
 
 class EventPlan extends BaseEntity
 {
