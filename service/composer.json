@@ -40,11 +40,11 @@
         {
             "type": "vcs",
             "url": "https://github.com/magikfoxzero/solari-module-ai-service.git"
-        }
+        },
         {
             "type": "vcs",
             "url": "https://github.com/magikfoxzero/solari-module-identity.git"
-        },
+        }
     ],
     "autoload": {
         "psr-4": {
