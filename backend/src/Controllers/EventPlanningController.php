@@ -5,6 +5,7 @@ namespace NewSolari\EventPlanning\Controllers;
 use NewSolari\Core\Http\BaseController;
 use NewSolari\Core\Http\Traits\RelationshipControllerTrait;
 use NewSolari\Identity\Models\IdentityUser;
+use NewSolari\Core\Contracts\IdentityUserContract;
 use NewSolari\EventPlanning\Models\EventPlan;
 use NewSolari\EventPlanning\Models\EventPlanNode;
 use NewSolari\EventPlanning\Models\EventPlanConnection;
@@ -2431,7 +2432,7 @@ class EventPlanningController extends BaseController
      * Filters to show only: user's own plans, public plans, and shared plans.
      * System admins and partition admins can see all plans.
      */
-    protected function applyAccessControl($query, IdentityUser $user, string $partitionId): void
+    protected function applyAccessControl($query, IdentityUserContract $user, string $partitionId): void
     {
         // System admins and partition admins can see all event plans in the partition
         if ($user->is_system_user || $user->isPartitionAdmin($partitionId)) {
@@ -2465,7 +2466,7 @@ class EventPlanningController extends BaseController
     /**
      * Check if user can access (read) an event plan.
      */
-    protected function canAccessEventPlan(EventPlan $eventPlan, IdentityUser $user, string $partitionId): bool
+    protected function canAccessEventPlan(EventPlan $eventPlan, IdentityUserContract $user, string $partitionId): bool
     {
         // System admins and partition admins can access all
         if ($user->is_system_user || $user->isPartitionAdmin($partitionId)) {
@@ -2480,7 +2481,7 @@ class EventPlanningController extends BaseController
      * Check if user can write (update/delete) an event plan.
      * Only creators and admins can write.
      */
-    protected function canWriteEventPlan(EventPlan $eventPlan, IdentityUser $user, string $partitionId): bool
+    protected function canWriteEventPlan(EventPlan $eventPlan, IdentityUserContract $user, string $partitionId): bool
     {
         // System admins and partition admins can write all
         if ($user->is_system_user || $user->isPartitionAdmin($partitionId)) {
