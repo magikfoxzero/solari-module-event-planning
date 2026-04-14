@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use NewSolari\Core\Identity\Models\IdentityPartition;
-use NewSolari\Core\Identity\Models\IdentityUser;
+use NewSolari\Identity\Models\IdentityPartition;
+use NewSolari\Identity\Models\IdentityUser;
 use NewSolari\EventPlanning\Models\EventPlan;
 use NewSolari\EventPlanning\Models\EventPlanConnection;
 use NewSolari\EventPlanning\Models\EventPlanDrawing;

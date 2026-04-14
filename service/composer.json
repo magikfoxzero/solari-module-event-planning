@@ -6,6 +6,7 @@
         "php": "^8.2",
         "laravel/framework": "^12.0",
         "newsolari/core": "@dev",
+        "newsolari/identity": "*",
         "newsolari/event-planning": "*"
     },
     "repositories": [
@@ -40,6 +41,10 @@
             "type": "vcs",
             "url": "https://github.com/magikfoxzero/solari-module-ai-service.git"
         }
+        {
+            "type": "vcs",
+            "url": "https://github.com/magikfoxzero/solari-module-identity.git"
+        },
     ],
     "autoload": {
         "psr-4": {

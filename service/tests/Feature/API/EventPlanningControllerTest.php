@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\API;
 
-use NewSolari\Core\Identity\Models\IdentityPartition;
-use NewSolari\Core\Identity\Models\IdentityUser;
-use NewSolari\Core\Identity\Models\Permission;
-use NewSolari\Core\Identity\Models\Group;
+use NewSolari\Identity\Models\IdentityPartition;
+use NewSolari\Identity\Models\IdentityUser;
+use NewSolari\Identity\Models\Permission;
+use NewSolari\Identity\Models\Group;
 use NewSolari\EventPlanning\Models\EventPlan;
 use NewSolari\EventPlanning\Models\EventPlanNode;
 use NewSolari\EventPlanning\Models\EventPlanConnection;

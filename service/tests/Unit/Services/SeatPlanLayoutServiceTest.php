@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Services;
 
-use NewSolari\Core\Identity\Models\IdentityPartition;
-use NewSolari\Core\Identity\Models\IdentityUser;
+use NewSolari\Identity\Models\IdentityPartition;
+use NewSolari\Identity\Models\IdentityUser;
 use NewSolari\EventPlanning\Models\EventPlan;
 use NewSolari\EventPlanning\Models\SeatPlan;
 use NewSolari\EventPlanning\Models\SeatTable;
