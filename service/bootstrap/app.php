@@ -7,6 +7,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
         \NewSolari\Core\CoreServiceProvider::class,
+        \NewSolari\Identity\IdentityServiceProvider::class,
         ...(class_exists(\NewSolari\Events\EventsServiceProvider::class) ? [\NewSolari\Events\EventsServiceProvider::class] : []),
         \NewSolari\EventPlanning\EventPlanningServiceProvider::class,
     ])
