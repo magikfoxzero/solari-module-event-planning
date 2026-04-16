@@ -16,7 +16,16 @@ return [
     |
     */
 
-    'allowed_origins' => array_filter(explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:3000'))),
+    // Derive from ALLOWED_DOMAINS: root domain + any subdomain wildcard
+    // Can override entirely with CORS_ALLOWED_ORIGINS
+    'allowed_origins' => env('CORS_ALLOWED_ORIGINS')
+        ? explode(',', env('CORS_ALLOWED_ORIGINS'))
+        : (env('ALLOWED_DOMAINS')
+            ? array_merge(...array_map(fn ($d) => [
+                "https://{$d}",
+                "https://*.{$d}",
+            ], array_filter(explode(',', env('ALLOWED_DOMAINS', '')))))
+            : ['http://localhost:5173', 'http://localhost:3000']),
 
     'allowed_methods' => [
         'GET',
